@@ -5,6 +5,8 @@ For this test I used a custom virtual scroller. You can also change the height a
 
 You can also change the height and width of the graphical objects themselves, but only in the code at the time of object initialization.
 
+FYI: it was possible to use vue 3, since the optimization processes are even better there, but for a small technical specification of the second version, I think it's enough
+
 ## Project setup
 ```
 yarn install
