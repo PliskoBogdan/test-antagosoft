@@ -1,12 +1,12 @@
 <style scoped>
-.vue-virtual-collection {
+.grapgical_objects {
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
 }
-.vue-virtual-collection-container {
+.grapgical_objects-container {
   position: relative;
 }
-.vue-virtual-collection .cell-container {
+.grapgical_objects .cell-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -15,13 +15,13 @@
 
 <template>
   <div
-    class="vue-virtual-collection"
+    class="grapgical_objects"
     :style="outerStyle"
     @scroll.passive="onScroll"
     ref="outer"
   >
     <slot name="header"></slot>
-    <div class="vue-virtual-collection-container" :style="containerStyle">
+    <div class="grapgical_objects-container" :style="containerStyle">
       <div
         v-for="item in displayItems"
         class="cell-container"
