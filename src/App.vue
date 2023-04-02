@@ -110,6 +110,10 @@
 </template>
 
 <script>
+// utils
+import getRandomColor from '@/utils/getRandomColor'
+
+//services
 import GraphicalObjectsList from "@/components/GraphicalObjectsList.vue";
 
 export default {
@@ -154,7 +158,7 @@ export default {
           data: {
             id: Math.random(),
             text: `#${index}`,
-            color: this.getRandomColor(),
+            color: getRandomColor(),
           },
           height,
           width: 75,
@@ -173,9 +177,6 @@ export default {
     cellSizeAndPositionGetter(item, index) {
       const { data, ...sizeAndPosition } = item;
       return sizeAndPosition;
-    },
-    getRandomColor() {
-      return "color" + parseInt(Math.random() * 8);
     },
   },
 };
