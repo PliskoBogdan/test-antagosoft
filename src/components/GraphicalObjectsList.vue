@@ -1,12 +1,12 @@
 <style scoped>
-.grapgical_objects {
+.grapgical__objects {
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
 }
-.grapgical_objects-container {
+.grapgical__objects-container {
   position: relative;
 }
-.grapgical_objects .cell-container {
+.grapgical__objects .cell-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -15,13 +15,13 @@
 
 <template>
   <div
-    class="grapgical_objects"
+    class="grapgical__objects"
     :style="outerStyle"
     @scroll.passive="onScroll"
     ref="outer"
   >
     <slot name="header"></slot>
-    <div class="grapgical_objects-container" :style="containerStyle">
+    <div class="grapgical__objects-container" :style="containerStyle">
       <div
         v-for="item in displayItems"
         class="cell-container"
