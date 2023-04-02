@@ -1,7 +1,7 @@
 import getRandomInt from "./getRandomInt";
 
 describe("getRandomInt", () => {
-  test("returns an integer within the given range", () => {
+  it("returns an integer within the given range", () => {
     const min = 1;
     const max = 10;
     const result = getRandomInt(min, max);
@@ -10,7 +10,7 @@ describe("getRandomInt", () => {
     expect(result).toBeLessThanOrEqual(max);
   });
 
-  test("returns the minimum value when min and max are the same", () => {
+  it("returns the minimum value when min and max are the same", () => {
     const min = 5;
     const max = 5;
     const result = getRandomInt(min, max);

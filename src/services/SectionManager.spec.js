@@ -9,18 +9,18 @@ describe('SectionManager', () => {
     sectionManager = new SectionManager();
   });
 
-  test('should create an instance with default section size', () => {
+  it('should create an instance with default section size', () => {
     expect(sectionManager).toBeInstanceOf(SectionManager);
     expect(sectionManager._sectionSize).toBe(SECTION_SIZE);
   });
 
-  test('should create an instance with custom section size', () => {
+  it('should create an instance with custom section size', () => {
     const customSectionSize = 500;
     const customSectionManager = new SectionManager(customSectionSize);
     expect(customSectionManager._sectionSize).toBe(customSectionSize);
   });
 
-  test('registerCell, freezeCells, and getCellMetadata', () => {
+  it('registerCell, freezeCells, and getCellMetadata', () => {
     const cellMetadatum = { height: 100, width: 100, x: 0, y: 0 };
     sectionManager.registerCell({ cellMetadatum, index: 0 });
     sectionManager.freezeCells();
@@ -30,7 +30,7 @@ describe('SectionManager', () => {
     }).toThrowError(TypeError);
   });
 
-  test('getSections', () => {
+  it('getSections', () => {
     const cellMetadatum = { height: 100, width: 100, x: 0, y: 0 };
     sectionManager.registerCell({ cellMetadatum, index: 0 });
 
@@ -40,7 +40,7 @@ describe('SectionManager', () => {
     expect(sections[0].getCellIndices()).toContain(0);
   });
 
-  test('getTotalSectionCount', () => {
+  it('getTotalSectionCount', () => {
     expect(sectionManager.getTotalSectionCount()).toBe(0);
 
     const cellMetadatum = { height: 100, width: 100, x: 0, y: 0 };
@@ -49,7 +49,7 @@ describe('SectionManager', () => {
     expect(sectionManager.getTotalSectionCount()).toBe(1);
   });
 
-  test('getCellIndices', () => {
+  it('getCellIndices', () => {
     const cellMetadatum = { height: 100, width: 100, x: 0, y: 0 };
     sectionManager.registerCell({ cellMetadatum, index: 0 });
 
