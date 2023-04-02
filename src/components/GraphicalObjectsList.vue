@@ -49,6 +49,10 @@ export default {
       type: Array,
       required: true,
     },
+    selectedItemId: {
+      type: [String, Number],
+      required: true
+    },
     height: {
       type: Number,
       required: true,
@@ -192,6 +196,7 @@ export default {
         for (let i = 0; i < 2000; i++) {
           const randomObj = getRandomInt(0, this.displayItems.length);
           const oldData = this.displayItems[randomObj]?.data;
+
           this.displayItems.splice(randomObj, 1, {
             ...this.displayItems[randomObj],
             data: {
@@ -199,6 +204,11 @@ export default {
               color: getRandomColor(),
             },
           });
+
+          if (oldData?.id === this.selectedItemId) {
+
+            this.$emit('selectedItemChange', this.displayItems[randomObj])
+          }
         }
       }, 1000);
     },

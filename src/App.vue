@@ -78,7 +78,7 @@
 
 <template>
   <div id="app">
-    <div v-if="selectedItem.id" class="popup">
+    <div v-if="selectedItem.id" :key="selectedItem.id" class="popup">
       <div>Element: {{ selectedItem.text }}</div>
       <div>Color: {{ colorHashByColorName[selectedItem.color] }}</div>
     </div>
@@ -91,6 +91,8 @@
         :collection="items"
         :height="800"
         :width="width"
+        :selected-item-id="selectedItem.id"
+        @selectedItemChange="onSelectedItemChange"
       >
         <div
           slot="cell"
@@ -171,6 +173,9 @@ export default {
     },
   },
   methods: {
+    onSelectedItemChange(item) {
+      this.selectedItem = item.data
+    },
     onSelectItem(item) {
       this.selectedItem = item;
     },
