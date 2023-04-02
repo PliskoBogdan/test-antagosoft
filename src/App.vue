@@ -89,7 +89,7 @@
       <GraphicalObjectsList
         :cellSizeAndPositionGetter="cellSizeAndPositionGetter"
         :collection="items"
-        :height="800"
+        :height="1200"
         :width="width"
         :selected-item-id="selectedItem.id"
         @selectedItemChange="onSelectedItemChange"
